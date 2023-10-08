@@ -7,7 +7,7 @@ defmodule Exmeal.Meal do
 
   schema "meals" do
     field :calories, :integer
-    field :date, :naive_datetime
+    field :date, :datetime
     field :description, :string
 
     timestamps()
