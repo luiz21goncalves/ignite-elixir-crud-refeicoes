@@ -28,6 +28,8 @@ defmodule ExmealWeb.ConnCase do
       import Plug.Conn
       import Phoenix.ConnTest
       import ExmealWeb.ConnCase
+
+      alias ExmealWeb.Router.Helpers, as: Routes
     end
   end
 
