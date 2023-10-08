@@ -19,7 +19,7 @@ defmodule Exmeal.MixProject do
   def application do
     [
       mod: {Exmeal.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :os_mon]
     ]
   end
 
