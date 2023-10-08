@@ -3,6 +3,8 @@ defmodule Exmeal.Meal do
 
   import Ecto.Changeset
 
+  @primary_key {:id, :binary_id, autogenerate: true}
+
   @required_params [:calories, :date, :description]
 
   @derive {Jason.Encoder, only: [:id, :calories, :date, :description, :inserted_at, :updated_at]}
