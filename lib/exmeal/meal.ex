@@ -19,6 +19,16 @@ defmodule Exmeal.Meal do
 
   def changeset(params) do
     %__MODULE__{}
+    |> validate(params)
+  end
+
+  def changeset(struct, params) do
+    struct
+    |> validate(params)
+  end
+
+  defp validate(struct, params) do
+    struct
     |> cast(params, @required_params)
   end
 end
