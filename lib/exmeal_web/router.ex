@@ -1,8 +1,11 @@
 defmodule ExmealWeb.Router do
   use ExmealWeb, :router
 
+  alias ExmealWeb.Plugins.UUIDChecker
+
   pipeline :api do
     plug :accepts, ["json"]
+    plug UUIDChecker
   end
 
   scope "/api", ExmealWeb do
