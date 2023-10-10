@@ -13,7 +13,9 @@ defmodule ExmealWeb.Plugins.UUIDChecker do
     end
   end
 
-  def render_error(conn) do
+  def call(conn, _options), do: conn
+
+  defp render_error(conn) do
     body = Jason.encode!(%{message: "Invalid UUID."})
 
     conn
