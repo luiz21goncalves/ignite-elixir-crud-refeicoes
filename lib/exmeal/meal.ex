@@ -30,5 +30,6 @@ defmodule Exmeal.Meal do
   defp validate(struct, params) do
     struct
     |> cast(params, @required_params)
+    |> validate_required(@required_params)
   end
 end

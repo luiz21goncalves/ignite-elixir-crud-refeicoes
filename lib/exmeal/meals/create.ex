@@ -1,4 +1,5 @@
 defmodule Exmeal.Meals.Create do
+  alias Exmeal.Error
   alias Exmeal.Meal
   alias Exmeal.Repo
 
@@ -12,6 +13,6 @@ defmodule Exmeal.Meals.Create do
   def handle_insert({:ok, %Meal{}} = result), do: result
 
   def handle_insert({:error, result}) do
-    {:error, %{status: :bad_request, result: result}}
+    {:error, Error.build(:bad_request, result)}
   end
 end
