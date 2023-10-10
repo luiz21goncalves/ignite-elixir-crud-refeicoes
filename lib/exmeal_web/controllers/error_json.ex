@@ -5,7 +5,7 @@ defmodule ExmealWeb.ErrorJSON do
 
   # If you want to customize a particular status code,
   # you may add your own clauses, such as:
-  def render("400.json", %{result: %Changeset{} = changeset}) do
+  def render("error.json", %{result: %Changeset{} = changeset}) do
     %{message: translate_errors(changeset)}
   end
 
