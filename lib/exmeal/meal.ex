@@ -3,9 +3,12 @@ defmodule Exmeal.Meal do
 
   import Ecto.Changeset
 
-  @primary_key {:id, :binary_id, autogenerate: true}
+  alias Exmeal.User
 
-  @required_params [:calories, :date, :description]
+  @primary_key {:id, :binary_id, autogenerate: true}
+  @foreign_key_type :binary_id
+
+  @required_params [:calories, :date, :description, :user_id]
 
   @derive {Jason.Encoder, only: [:id, :calories, :date, :description, :inserted_at, :updated_at]}
 
@@ -13,6 +16,8 @@ defmodule Exmeal.Meal do
     field :calories, :integer
     field :date, :date
     field :description, :string
+
+    belongs_to :user, User
 
     timestamps()
   end
