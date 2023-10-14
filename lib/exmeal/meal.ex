@@ -10,7 +10,7 @@ defmodule Exmeal.Meal do
 
   @required_params [:calories, :date, :description, :user_id]
 
-  @derive {Jason.Encoder, only: [:id, :calories, :date, :description, :inserted_at, :updated_at]}
+  @derive {Jason.Encoder, only: @required_params ++ [:id, :inserted_at, :updated_at]}
 
   schema "meals" do
     field :calories, :integer
