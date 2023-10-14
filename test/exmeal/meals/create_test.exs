@@ -1,5 +1,5 @@
 defmodule Exmeal.Meals.CreateTest do
-  use Exmeal.DataCase
+  use Exmeal.DataCase, async: true
 
   describe "call/1" do
     test "when all params are valid, returns the meal" do

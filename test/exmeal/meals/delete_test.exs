@@ -1,5 +1,5 @@
 defmodule Exmeal.Meals.DeleteTest do
-  use Exmeal.DataCase
+  use Exmeal.DataCase, async: true
 
   describe "call/1" do
     test "when a valid id is given, returns the meal" do
